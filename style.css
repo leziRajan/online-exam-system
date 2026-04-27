@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* style.css */
 
 *{
@@ -210,4 +211,218 @@ cursor:pointer;
 
 .question-box label:hover{
 background:#e3f2fd;
+=======
+/* style.css */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f5f7fa;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:#0d47a1;
+color:white;
+}
+
+.btn{
+background:#ff9800;
+padding:10px 20px;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.hero{
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(to right,#0d47a1,#1976d2);
+color:white;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:50px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+text-align:center;
+min-height:220px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:12px;
+}
+
+
+.card p{
+margin:15px 0;
+line-height:1.6;
+}
+
+.card .btn{
+margin-top:15px;
+display:inline-block;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#0d47a1;
+color:white;
+margin-top:30px;
+}
+
+@media(max-width:768px){
+nav{
+padding:15px;
+flex-direction:column;
+gap:10px;
+}
+
+.hero h1{
+font-size:30px;
+}
+}
+
+/* style.css me ye add karo */
+
+.login-box{
+width:350px;
+margin:100px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.login-box button{
+border:none;
+cursor:pointer;
+}
+
+/* style.css me ye add karo */
+
+.card:hover{
+transform:translateY(-5px);
+transition:0.3s;
+}
+
+input{
+outline:none;
+}
+
+h2,h3{
+margin-bottom:15px;
+}
+
+button{
+border:none;
+cursor:pointer;
+}
+
+.card-link{
+text-decoration:none;
+color:black;
+display:block;
+}
+
+.pass-box{
+position:relative;
+width:100%;
+}
+
+.pass-box input{
+width:100%;
+padding:12px;
+padding-right:45px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.pass-box span{
+position:absolute;
+right:15px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+font-size:18px;
+user-select:none;
+}
+
+.exam-container{
+max-width:800px;
+margin:50px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.question-box{
+margin-bottom:30px;
+text-align:left;
+}
+
+.question-box h2{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.question-box p{
+font-size:18px;
+margin-bottom:15px;
+}
+
+.question-box label{
+display:block;
+padding:10px 15px;
+margin:10px 0;
+background:#f5f7fa;
+border-radius:8px;
+cursor:pointer;
+}
+
+.question-box label:hover{
+background:#e3f2fd;
+>>>>>>> 2639d8a4dcceb4ceb0550aaafed9c698b23e9974
 }
