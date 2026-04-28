@@ -137,8 +137,13 @@ function submitExam() {
         if (userAnswers[i] == questions[i].answer) score++;
     }
 
+    // Save data for result page
     localStorage.setItem("score", score);
     localStorage.setItem("total", questions.length);
+    localStorage.setItem("userAnswers", JSON.stringify(userAnswers));
+    localStorage.setItem("questions", JSON.stringify(questions));
+    localStorage.setItem("subject", new URLSearchParams(window.location.search).get("subject") || "html");
+
     window.location.href = "result.html";
 }
 
@@ -160,6 +165,47 @@ window.onload = function () {
         document.getElementById("statusText").innerText = marks >= total/2 ? "Status: Pass" : "Status: Fail";
     }
 
+// ================== RESULT REVIEW ==================
+if (document.getElementById("reviewContainer")) {
+    let marks = parseInt(localStorage.getItem("score")) || 0;
+    let total = parseInt(localStorage.getItem("total")) || 10;
+    let userAns = JSON.parse(localStorage.getItem("userAnswers") || "[]");
+    let qList = JSON.parse(localStorage.getItem("questions") || "[]");
+
+    document.getElementById("scoreText").innerText = 
+        `Your Score: ${marks} / ${total} (${Math.round(marks/total*100)}%)`;
+
+    let html = "";
+
+    qList.forEach((q, i) => {
+        let userIndex = userAns[i];
+        let userChoice = (userIndex !== undefined && userIndex !== null) 
+                        ? q.options[userIndex] 
+                        : "Not Attempted";
+
+        let correctAns = q.options[q.answer];
+
+        let isCorrect = (userIndex == q.answer);
+
+        html += `
+            <div class="question-review ${isCorrect ? 'correct' : 'wrong'}">
+                <p><strong>Q${i+1}:</strong> ${q.q}</p>
+                <p><strong>Your Answer:</strong> 
+                    <span style="color: ${isCorrect ? '#4caf50' : '#f44336'}; font-weight:500;">
+                        ${userChoice}
+                    </span>
+                </p>
+                <p><strong>Correct Answer:</strong> 
+                    <span style="color:#4caf50; font-weight:500;">
+                        ${correctAns}
+                    </span>
+                </p>
+            </div>
+        `;
+    });
+
+    document.getElementById("reviewContainer").innerHTML = html;
+}
     // Exam Page
     if (document.getElementById("questionText")) {
         let params = new URLSearchParams(window.location.search);
@@ -183,3 +229,9 @@ window.onload = function () {
         }, 1000);
     }
 };
+function restartExam() {
+    localStorage.removeItem("score");
+    localStorage.removeItem("userAnswers");
+    localStorage.removeItem("questions");
+    window.location.href = "dashboard.html";
+}
