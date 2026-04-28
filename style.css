@@ -531,3 +531,78 @@ background:#e3f2fd;
     font-size: 16px;
     line-height: 1.7;
 }
+
+/* ================== MOBILE RESPONSIVE ================== */
+
+/* Exam Page Mobile */
+.exam-container {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+nav {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav h3 {
+    font-size: 16px;
+}
+
+.question-review {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Submit Button Big on Mobile */
+.btn {
+    padding: 14px 25px;
+    font-size: 16px;
+    min-width: 160px;
+}
+
+/* Result Page Mobile */
+.result-container,
+.review-card {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Make Radio buttons bigger on mobile */
+input[type="radio"] {
+    transform: scale(1.3);
+    margin-right: 8px;
+}
+
+/* Touch friendly labels */
+.question-box label {
+    padding: 15px 18px;
+    font-size: 16px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* Timer bigger on mobile */
+#timer {
+    font-size: 22px !important;
+    font-weight: bold;
+}
+
+/* Buttons stack on mobile */
+.btn {
+    display: inline-block;
+    margin: 8px 5px;
+}
+
+/* Features cards mobile */
+.features {
+    padding: 30px 15px;
+}
+
+.card {
+    min-height: 180px;
+}
