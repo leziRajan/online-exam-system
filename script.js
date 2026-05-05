@@ -1,4 +1,4 @@
-// ================== AUTH FUNCTIONS ==================
+
 function registerUser() {
     let name = document.getElementById("regName")?.value.trim();
     let email = document.getElementById("regEmail")?.value.trim();
@@ -48,47 +48,46 @@ function logoutUser() {
     window.location.href = "login.html";
 }
 
-// ================== QUESTIONS ==================
 let htmlQuestions = [
-    {q:"HTML stands for?", options:["Hyper Text Markup Language","High Tool Machine Language","Home Text Markup"], answer:0},
-    {q:"HTML paragraph tag is?", options:["&lt;p&gt;","&lt;h1&gt;","&lt;img&gt;"], answer:1},
-    {q:"HTML image tag is?", options:["&lt;img&gt;","&lt;image&gt;","&lt;pic&gt;"], answer:0},
-    {q:"HTML heading largest tag?", options:["&lt;h1&gt;","&lt;h6&gt;","&lt;head&gt;"], answer:0},
-    {q:"HTML link tag uses?", options:["&lt;a&gt;","&lt;linker&gt;","&lt;href&gt;"], answer:0},
-    {q:"Line break tag?", options:["&lt;br&gt;","&lt;break&gt;","&lt;lb&gt;"], answer:0},
-    {q:"HTML file extension?", options:[".html",".css",".js"], answer:0},
-    {q:"Ordered list tag?", options:["&lt;ol&gt;","&lt;ul&gt;","&lt;li&gt;"], answer:0},
-    {q:"Table row tag?", options:["&lt;tr&gt;","&lt;td&gt;","&lt;th&gt;"], answer:0},
-    {q:"Form input tag?", options:["&lt;input&gt;","&lt;type&gt;","&lt;textbox&gt;"], answer:0}
+    {q:"HTML stands for?", options:["Home Text Markup","Hyper Text Markup Language","High Tool Machine"], answer:1},
+    {q:"HTML paragraph tag is?", options:["&lt;h1&gt;","&lt;p&gt;","&lt;img&gt;"], answer:1},
+    {q:"HTML image tag is?", options:["&lt;pic&gt;","&lt;image&gt;","&lt;img&gt;"], answer:2},
+    {q:"Largest heading tag?", options:["&lt;head&gt;","&lt;h6&gt;","&lt;h1&gt;"], answer:2},
+    {q:"Link tag in HTML?", options:["&lt;href&gt;","&lt;a&gt;","&lt;link&gt;"], answer:1},
+    {q:"Line break tag?", options:["&lt;lb&gt;","&lt;break&gt;","&lt;br&gt;"], answer:2},
+    {q:"HTML file extension?", options:[".css",".html",".js"], answer:1},
+    {q:"Ordered list tag?", options:["&lt;ul&gt;","&lt;li&gt;","&lt;ol&gt;"], answer:2},
+    {q:"Table row tag?", options:["&lt;td&gt;","&lt;tr&gt;","&lt;th&gt;"], answer:1},
+    {q:"Form input tag?", options:["&lt;textbox&gt;","&lt;type&gt;","&lt;input&gt;"], answer:2}
 ];
 
 let cssQuestions = [
-    {q:"CSS stands for?", options:["Cascading Style Sheets","Creative Style Sheets","Colorful Style System"], answer:0},
-    {q:"CSS used for?", options:["Styling","Database","Hosting"], answer:0},
-    {q:"CSS file extension?", options:[".css",".html",".js"], answer:0},
-    {q:"Change text color property?", options:["color","font-color","text-style"], answer:0},
-    {q:"Background color property?", options:["background-color","bgcolor","back-color"], answer:0},
-    {q:"Make text bold?", options:["font-weight","text-bold","weight"], answer:0},
-    {q:"Center text property?", options:["text-align","align-text","center"], answer:0},
-    {q:"Margin means?", options:["Outer space","Inner space","Text size"], answer:0},
-    {q:"Padding means?", options:["Inner space","Outer space","Border"], answer:0},
-    {q:"Responsive design uses?", options:["Media Query","SQL","PHP"], answer:0}
+    {q:"CSS stands for?", options:["Creative Style Sheets","Cascading Style Sheets","Color Style"], answer:1},
+    {q:"CSS is used for?", options:["Logic","Styling","Database"], answer:1},
+    {q:"CSS file extension?", options:[".js",".css",".html"], answer:1},
+    {q:"Text color property?", options:["font-color","text-style","color"], answer:2},
+    {q:"Background color?", options:["bgcolor","background-color","back-color"], answer:1},
+    {q:"Make text bold?", options:["text-bold","font-weight","weight"], answer:1},
+    {q:"Center align text?", options:["center","text-align","align"], answer:1},
+    {q:"Margin is?", options:["Inner space","Outer space","Border"], answer:1},
+    {q:"Padding is?", options:["Outer space","Border","Inner space"], answer:2},
+    {q:"Responsive design uses?", options:["PHP","Media Query","SQL"], answer:1}
 ];
 
 let jsQuestions = [
-    {q:"JavaScript used for?", options:["Logic","Styling","Database"], answer:0},
-    {q:"JS file extension?", options:[".js",".css",".java"], answer:0},
-    {q:"Popup function?", options:["alert()","show()","msg()"], answer:0},
-    {q:"Print in console?", options:["console.log()","print()","echo()"], answer:0},
-    {q:"Variable keyword?", options:["let","style","tag"], answer:0},
-    {q:"Condition statement?", options:["if","for","html"], answer:0},
-    {q:"Loop example?", options:["for","img","css"], answer:0},
-    {q:"Get element by id?", options:["getElementById()","queryStyle()","fetchId()"], answer:0},
-    {q:"Store data in browser?", options:["localStorage","MySQL","Photoshop"], answer:0},
-    {q:"Comment symbol single line?", options:["//","##","&lt;!--"], answer:0}
+    {q:"JavaScript is used for?", options:["Styling","Logic & Interaction","Database"], answer:1},
+    {q:"JS file extension?", options:[".java",".js",".css"], answer:1},
+    {q:"Popup alert function?", options:["show()","alert()","msg()"], answer:1},
+    {q:"Print to console?", options:["echo()","print()","console.log()"], answer:2},
+    {q:"Variable declaration?", options:["style","let","tag"], answer:1},
+    {q:"Condition statement?", options:["html","if","for"], answer:1},
+    {q:"Loop example?", options:["img","for","css"], answer:1},
+    {q:"Get element by ID?", options:["fetchId()","getElementById()","query()"], answer:1},
+    {q:"Browser storage?", options:["Photoshop","localStorage","MySQL"], answer:1},
+    {q:"Single line comment?", options:["##","//","&lt;!--"], answer:1}
 ];
 
-// ================== EXAM SYSTEM ==================
+
 let current = 0;
 let userAnswers = [];
 let questions = [];
@@ -147,7 +146,7 @@ function submitExam() {
     window.location.href = "result.html";
 }
 
-// ================== PAGE LOAD ==================
+
 window.onload = function () {
 // Auto redirect if already logged in
     if (localStorage.getItem("isLogin") === "true") {
@@ -165,7 +164,7 @@ window.onload = function () {
         document.getElementById("statusText").innerText = marks >= total/2 ? "Status: Pass" : "Status: Fail";
     }
 
-// ================== RESULT REVIEW ==================
+
 if (document.getElementById("reviewContainer")) {
     let marks = parseInt(localStorage.getItem("score")) || 0;
     let total = parseInt(localStorage.getItem("total")) || 10;
